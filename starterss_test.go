@@ -1,12 +1,13 @@
 package starter_test
 
 import (
+	"github.com/mingsterism/go_test_starter/custom"
 	"io"
 	"net/http/httptest"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	starter "github.com/williaminfante/go_test_starter"
+	starter "github.com/mingsterism/go_test_starter"
 )
 
 func TestSayHello(t *testing.T) {
@@ -44,4 +45,9 @@ func TestCheckhealth(t *testing.T) {
 
 		assert.Equal(t, nil, err)
 	})
+}
+
+func TestMultiply(t *testing.T) {
+	result := custom.Multiply(10, 20)
+	assert.Equal(t, 200, result)
 }
